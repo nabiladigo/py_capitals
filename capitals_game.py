@@ -165,8 +165,12 @@ score = 0
 correct =0
 wrong = 0
 
-random.shuffle(states)
-
-print(states[0]["name"])
+def game():
+    print("welcome to hte game!:" )
+    random.shuffle(states)
+    # print(states[0]["name"])
+    found_state = states[0]["name"]
+    answer = input(f"Please enter the state capital of {found_state}:")
+game()
 
 
