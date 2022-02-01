@@ -154,12 +154,19 @@ states = [
 #     "capital": "Cheyenne"
 # }
 ]
+import random
 
 states.append("correct:")
 states.append("wrong:")
-print(states)
+# print(states)
 
+score = 0
 
+correct =0
+wrong = 0
 
+random.shuffle(states)
+
+print(states[0]["name"])
 
 
