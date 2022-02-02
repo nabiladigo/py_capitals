@@ -159,29 +159,28 @@ from collections import Counter
 
 states.append("correct:")
 states.append("wrong:")
-# print(states)
 
 score = 0
 
-correct =0
-wrong = 0
-
-def game(correct_answer,wrong_answer ):
-    print("welcome to the game!" )
+print("welcome to the game!" )
+def game(x):
     random.shuffle(states)
-    # print(states[0]["name"])
-    found_state = states[0]["name"]
-    states_capital = states[0]["capital"]
-    answer = input(f"Please enter the state capital of {found_state}: {states_capital}  :")
-    if answer == states_capital :
-        correct_answer += 1
-        print("correct_answer:")
-        print(correct_answer)
+    state = states[x]["name"]
+    capital = states[x]["capital"]
+    if x < 3 :
+        answer = input(f"Please enter the state capital of {state}: {capital}  :")
+        if answer == capital :
+            global score
+            score += 1
+            print("correct")
+            print(score)
+        else:
+            print("wrong")
+            print(score)
+        game(x+1)
     else:
-        wrong_answer += 1
-        print("wrong_answer:")
-        print(wrong_answer)
-    game(correct_answer, wrong_answer)
-game(correct, wrong)
+        print("Game over")
+        print(f"Your final score is: {score}")
+game(0)
 
 
