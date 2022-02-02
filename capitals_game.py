@@ -167,16 +167,15 @@ def game(x):
     random.shuffle(states)
     state = states[x]["name"]
     capital = states[x]["capital"]
-    if x < 3 :
-        answer = input(f"Please enter the state capital of {state}: {capital}  :")
+    if x < 49 :
+        answer = input(f"Please enter the state capital of {state} :")
         if answer == capital :
             global score
             score += 1
             print("correct")
-            print(score)
+            print(f"Current score : {score}")
         else:
-            print("wrong")
-            print(score)
+            print(f"Wrong answer. The capital is : {capital}")
         game(x+1)
     else:
         print("Game over")
